@@ -1,5 +1,7 @@
 {
   "name": "COGQOD_Hover_Hopup",
   "version": "0.1.0",
-  "author": "COGQOD"
+  "minAppVersion": "1.5.0",
+  "author": "COGQOD",
+  "authorUrl": "https://github.com/COGQOD/hoverpopup-obsidian-theme/"
 }
