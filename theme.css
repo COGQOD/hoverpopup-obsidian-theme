@@ -105,29 +105,19 @@
 
   --table-border-color: rgb(from var(--color-main-purple) r g b / 0.2);
 }
-body.theme-octodream {
-  --octodream-flag: true;
-}
-/* #region ========== CUSTOM CLASS ========================================== */
-.community-item:hover::after {
-  content: "Am I not good enough?";
-  position: absolute;
 
-  font-size: 1.4em;
-  font-weight: 600;
-  color: var(--color-main-gold);
-  pointer-events: none;
-}
+/* #region ========== CUSTOM CLASS ========================================== */
 .community-item.mod-active:hover::after {
   white-space: nowrap;
-  content: "☆ Me Me Me!!! ☆";
+  content: "☆ This is ME!!! ☆";
   position: absolute;
   top: -32px;
+  left: -3px;
   font-size: 30px;
   font-weight: 600;
   color: var(--color-main-gold);
   pointer-events: none;
-  /* animation: cute-bounce 0.6s ease infinite; */
+  animation: cute-bounce 0.6s ease infinite;
 }
 
 /* #region spoiler */
@@ -235,7 +225,7 @@ div.horizontal-main-container > div > div.workspace-split.mod-vertical.mod-root 
   transition: all 0.2s ease;
 }
 
-.mod-horizontal .workspace-tab-header:hover {
+.workspace-split.mod-horizontal.mod-sidedock.mod-left-split .workspace-tab-header:hover {
   /* 此处无法应用background-color，会被子类吃了（覆盖） 这是什么反人类设计 */
   /* 好好好，为了确保外发光正常我还是要加这个 */
   /* 哎，我又不要外发光啦 铁咩！ */
@@ -384,6 +374,7 @@ div.horizontal-main-container > div > div.workspace-split.mod-vertical.mod-root 
 .popover.hover-popover {
   overflow: visible;
 }
+.internal-embed.is-loaded.file-embed.mod-empty-attachment,
 .popover.hover-popover .file-embed {
   color: var(--color-main-alart);
 }
@@ -397,7 +388,6 @@ div.horizontal-main-container > div > div.workspace-split.mod-vertical.mod-root 
 .file-embed {
   position: relative;
   width: 100%; 
-  height: 100%;
   font-weight: 900;
   border-radius: 10px;
   border: 4px solid var(--color-main-dark);
@@ -816,8 +806,8 @@ body.styled-scrollbars ::-webkit-scrollbar-thumb:active {
 }
 body > div.app-container > div.status-bar > div.status-bar-item.plugin-sync,
 .sync-status-icon.mod-error:hover {
-    color: var(--color-main-green);
-    background-color: none !important;
+  color: var(--color-main-green);
+  background-color: none !important;
   background-image: none !important;
 }
 
@@ -1393,13 +1383,13 @@ em {
   --code-border-color: var(--color-main-lightdark);
 
   /* ============================================== */
-  /* ===       preview animation part 1/4       === */
+  /* ===       preview animation part 1/5       === */
   /* ===               Base Color               === */
   /* ===         Just change the colors         === */
   /* ============================================== */
 
   /* ember */
-  --color-code-preview-code: var(--color-code-p3-ember);
+  /* --color-code-preview-code: var(--color-code-p3-ember);
   --color-code-preview-primary: var(--color-code-p3-ember);
   --color-code-preview-secondary: var(--color-ember-red);
   --color-code-preview-knownl: var(--color-ember-dark);
@@ -1411,12 +1401,12 @@ em {
   --color-code-preview-scan-a: rgba(var(--color-code-p3-ember-rgb), 1);
   --color-code-preview-scan-b: rgba(var(--color-code-p3-ember-rgb), 0.4);
   --color-code-preview-scan-c: rgba(var(--color-code-p3-ember-rgb), 0.18);
-  --color-code-preview-scan-d: rgba(var(--color-code-p3-ember-rgb), 0.06);
+  --color-code-preview-scan-d: rgba(var(--color-code-p3-ember-rgb), 0.06); */
   /* Above, the final variables, resolve to numeric "R,G,B" format when using rgba(), */
   /* otherwise the gradient or transparency may not work. */
   
   /* holo */
-  /* --color-code-preview-code: var(--color-code-p4-white);
+  --color-code-preview-code: var(--color-code-p4-white);
   --color-code-preview-primary: var(--color-main-holo);
   --color-code-preview-secondary: var(--color-main-holo);
   --color-code-preview-knownl: var(--color-holo-normal);
@@ -1428,7 +1418,7 @@ em {
   --color-code-preview-scan-a: rgba(var(--color-main-holo-rgb), 1);
   --color-code-preview-scan-b: rgba(var(--color-main-holo-rgb), 0.4);
   --color-code-preview-scan-c: rgba(var(--color-main-holo-rgb), 0.18);
-  --color-code-preview-scan-d: rgba(var(--color-main-holo-rgb), 0.06); */
+  --color-code-preview-scan-d: rgba(var(--color-main-holo-rgb), 0.06);
 }
 
 /* #region scrollbar */
@@ -1480,7 +1470,7 @@ em {
 }
 
 /* ============================================== */
-/* ===       preview animation part 2/4       === */
+/* ===       preview animation part 2/5       === */
 /* ===            Infinite Flicker            === */
 /* ===  Comment out animation to turn off it  === */
 /* ===      Also comment out text-shadow      === */
@@ -1492,6 +1482,7 @@ em {
   border: 2px solid rgb(from currentColor r g b / 0.1) !important;
 
   background-color: rgb(from currentColor r g b / 0.02);
+  transition: all 0.4s ease;
 
   text-shadow: 0 0 3px rgb(from currentColor r g b / 0.6), 0 0 10px rgb(from currentColor r g b / 0.4);
   
@@ -1519,7 +1510,7 @@ em {
 }
 
 /* ============================================== */
-/* ===       preview animation part 3/4       === */
+/* ===       preview animation part 3/5       === */
 /* ===         Fenced Code Block Scan         === */
 /* ===  Change background mode / colors here  === */
 /* ============================================== */
@@ -1607,7 +1598,7 @@ pre[class*='language-']::before {
 }
 
   /* ============================================== */
-  /* ===       preview animation part 4/4       === */
+  /* ===       preview animation part 4/5       === */
   /* ===              Copy Buttons              === */
   /* ===  You need to find the colors yourself  === */
   /* ===          Enjoy what I enjoyed          === */
@@ -1897,7 +1888,13 @@ a.tag:hover::after {
   filter: drop-shadow( 0 0 5px currentColor);
 }
 
-.cm-hashtag {
+.cm-hashtag:hover {
+  color: var(--color-code-p4-white);
+}
+
+/* can not use this. */
+/* position: relative; will make cursor disappear*/
+/* .cm-hashtag {
   position: relative;
   font-weight: 600;
 }
@@ -1925,7 +1922,7 @@ a.tag:hover::after {
 }
 .cm-hashtag-end::before {
   padding-inline-end: 0px !important;
-}
+} */
 
 /* underline randerers are in link section */
 
@@ -2152,6 +2149,12 @@ span.cm-error{ color: var(--color-main-alart) !important;}
 .cm-property { color: var(--color-main-purple);}
 /* #endregion */
 
+/* ============================================== */
+/* ===       preview animation part 5/5       === */
+/* ===              Syntax Color              === */
+/* ===  conmmentout the colors you dont need  === */
+/* ============================================== */
+
 /* #region holo */
 .token.directive-hash,
 .token.directive.keyword,
@@ -2205,7 +2208,7 @@ span.cm-error{ color: var(--color-main-alart) !important;}
 /* #endregion  */
 
 /* #region ember */
-.token.directive-hash,
+/* .token.directive-hash,
 .token.directive.keyword,
 .token.punctuation { color: var(--color-ember-red) !important;}
 
@@ -2253,7 +2256,7 @@ span.cm-error{ color: var(--color-main-alart) !important;}
 .token.tag { color: var(--color-ember-orange);}
 
 .token.property-access,
-.token.property { color: var(--color-main-paleyellow);}
+.token.property { color: var(--color-main-paleyellow);} */
 /* #endregion  */
 
 /* #region cant find where are these */
