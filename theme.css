@@ -806,9 +806,7 @@ body.styled-scrollbars ::-webkit-scrollbar-thumb:active {
 }
 body > div.app-container > div.status-bar > div.status-bar-item.plugin-sync,
 .sync-status-icon.mod-error:hover {
-  color: var(--color-main-green);
-  background-color: none !important;
-  background-image: none !important;
+  color: var(--color-main-gold);
 }
 
 /* #endregion */
