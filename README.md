@@ -86,7 +86,7 @@ line 2145: preview animation part 5/5 : 语法高亮<br>
 
 ~~我自己都不用~~<br>
 ### Color / 颜色
-Most color definitions are at the beginning of the file, and most colors are directly called from the color definitions.
+Most color definitions are at the beginning of the file, and most colors are directly called from the color definitions.<br>
 大部分颜色定义在文件开头，大部分颜色直接调用颜色定义
 #### About Search Highlights 关于搜索高亮
 In line 733, we have this:<br>
@@ -139,9 +139,9 @@ and try my theme<br>
 \<span class=blur>\</span><br>
 
 By the way, I set up four hidden blocks. I couldn't find this feature in Obsidian; they only work within this theme.<br>
-Slightly darker color<br>
+Darker<br>
 \<span class=spoiler>\</span><br>
-Pure black<br>
+black<br>
 \<span class=spoiler-b>\</span><br>
 Invisible<br>
 \<span class=hide>\</span><br>
