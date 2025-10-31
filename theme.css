@@ -111,7 +111,7 @@
   white-space: nowrap;
   content: "☆ This is ME!!! ☆";
   position: absolute;
-  top: -32px;
+  bottom: 0px;
   left: -3px;
   font-size: 30px;
   font-weight: 600;
